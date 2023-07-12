@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "TODO: define base URI here from github raw",
+  "title": "360 Giving Extensions Registry Entry",
+  "desription": "An entry in the 360Giving Extensions Registry",
+  "type": "object",
+  "properties":
+    {
+      "id":
+        {
+	  
+	},
+      "title":
+        {
+	
+	},
+      "description":
+        {
+	
+	},
+      "documentationUrl":
+        {
+	
+	},
+      "dependsOn":
+        {
+	
+	},
+      "compatibility":
+        {
+	
+	},
+      "contactPoint":
+        {
+	
+	},
+      "extensionBaseUrl":
+        {
+	
+	},
+      "schemas":
+        {
+	
+	},
+      "codelists":
+        {
+	
+	}
+    }
+}
