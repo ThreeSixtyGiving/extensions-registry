@@ -1,0 +1,27 @@
+{
+ "id": "example-extension",
+ "title": "An Example Extension",
+ "description": "This is an example registry entry pointing to a non-existant Example Extension. In a real entry, you'd put a brief description of the Extension here.",
+ "documentationUrl": "https://example.org/360giving/example-extension/docs/",
+ "compatibility": [
+   "1.4"
+ ],
+ "contactDetails": {
+   "email": "support@example.org",
+   "name": "Example Organisation or Person"
+ },
+ "extensionBaseUrl": "https://raw.githubusercontent.com/example-github-user/example-extension/1__0/",
+ "schemas": [
+   {
+     "target": "360-giving-schema.json",
+     "extensionSchema": "example-extension.json"
+   },
+   {
+     "target": "360-giving-package-schema.json",
+     "extensionSchema": "example-metadata-extension.json"
+   }
+ ],
+ "codelists": [
+   "example-codelist.csv"
+ ]
+}
