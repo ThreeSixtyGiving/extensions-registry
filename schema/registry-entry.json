@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "TODO: define base URI here from github raw",
+  "$id": "https://raw.githubusercontent.com/ThreeSixtyGiving/extensions-registry/main/schema/registry-entry.json",
   "title": "360 Giving Extensions Registry Entry",
   "desription": "An entry in the 360Giving Extensions Registry",
   "type": "object",
@@ -8,43 +8,121 @@
     {
       "id":
         {
-	  
+	 "type": "string",
+	 "title": "Identifier",
+	 "description": "Identifier" 
 	},
       "title":
         {
-	
+	 "type": "string",
+	 "title": "Title",
+	 "description": "The title of the extension"
 	},
       "description":
         {
-	
+	  "type": "string",
+	  "title": "Description",
+	  "description": "A brief human-readable description of the extension"
 	},
       "documentationUrl":
         {
-	
+	  "type": "string",
+	  "format": "uri",
+	  "title": "Documentation URL",
+	  "description": "The URI for where people may find the documentation for this extension."
 	},
       "dependsOn":
         {
-	
+	  "type": "array",
+	  "title": "Depends On Extensions",
+	  "description": "An array of strings representing other extensions which this extension depends on to function properly.",
+	  "items":
+	    {
+	      "type": "string"
+	    },
+	  "uniqueItems": true
 	},
       "compatibility":
         {
-	
+	  "type": "array",
+	  "title": "Compatability",
+	  "description": "An array of strings representing versions of the 360Giving Standard that this extension is confirmed to be compatible with.",
+	  "items":
+	    {
+	      "type": "string",
+	      "pattern": "^\\d+\\.\\d+$"
+	    },
+	  "uniqueItems": true
 	},
-      "contactPoint":
+      "contactDetails":
         {
-	
+	  "type": "object",
+	  "title": "Contact Details",
+	  "description": "Contact Details where people may get in touch with the maintainers/owners of the extension.",
+	  "properties":
+	    {
+	      "name": {
+	        "type": "string",
+		"title": "Name",
+		"description": "The name of the contact for this extension."
+	      },
+	      "email": {
+	        "type": "string",
+		"format": "email",
+		"title": "Email",
+		"description": "The email address of the contact for this extension."
+	      }
+	    },
+	    "required": ["email"]
 	},
       "extensionBaseUrl":
         {
-	
+	  "type": "string",
+	  "format": "uri",
+	  "title": "Extension Base URL",
+	  "description": "The base URL of the extension to access the extension files. This is likely a raw.githubusercontent.com format URL, or its equivalent for other services."
 	},
       "schemas":
         {
-	
+	  "type": "array",
+	  "title": "Extension Schemas",
+	  "description": "An array containing extension schemas, to be patched onto the target schemas in the 360Giving Standard.",
+	  "minItems": 1,
+	  "items": {
+	    "type": "object",
+	    "required": ["target", "extensionSchema"],
+	    "properties": {
+	      "target": {
+	        "type": "string",
+		"title": "Target Schema",
+		"description": "The target schema onto which this extension schema will be patched. Must match a file inside the 360Giving Standard Repo schema folder.",
+		"oneOf": [
+		  {
+		    "pattern": "^360-giving-schema\\.json$"
+		  },
+		  {
+		    "pattern": "^360-giving-package-schema\\.json$"
+		  }
+		]
+	      },
+	      "extensionSchema": {
+		"type": "string",
+		"title": "Extension Schema",
+		"description": "The extension schema file which should be patched onto the target schema. Must match a filename of a file contained inside the schema/ folder underneath the value of extensionBaseUrl.",
+		"pattern": "^.*\\.json$"
+	      }
+	    }
+	  }
 	},
       "codelists":
         {
-	
+	  "type": "array",
+	  "title": "Extension Codelists",
+          "description": "An array containing the names of codelist files added by this extension. Unlike extension schemas, codelists currnently cannot be used to extend existing codelists inside 360Giving. Tools should ignore any entry in this array whose value matches the name of a codelist in 360Giving until this behaviour is desirable.",
+	  "items": {
+	    "type": "string"
+	  },
+	  "uniqueItems": true
 	}
     }
 }
