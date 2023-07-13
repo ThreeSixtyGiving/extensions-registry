@@ -4,6 +4,16 @@
   "title": "360 Giving Extensions Registry Entry",
   "desription": "An entry in the 360Giving Extensions Registry",
   "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "documentationUrl",
+    "compatibility",
+    "contactDetails",
+    "extensionBaseUrl",
+    "schemas"
+  ],
   "properties":
     {
       "id":
@@ -52,7 +62,8 @@
 	      "type": "string",
 	      "pattern": "^\\d+\\.\\d+$"
 	    },
-	  "uniqueItems": true
+	  "uniqueItems": true,
+	  "minItems": 1
 	},
       "contactDetails":
         {
@@ -118,11 +129,13 @@
         {
 	  "type": "array",
 	  "title": "Extension Codelists",
-          "description": "An array containing the names of codelist files added by this extension. Unlike extension schemas, codelists currnently cannot be used to extend existing codelists inside 360Giving. Tools should ignore any entry in this array whose value matches the name of a codelist in 360Giving until this behaviour is desirable.",
+          "description": "An array containing the names of codelist files added by this extension. Should match a filename located in the codelists/ folder undeneath the value of extensionBaseUrl. Unlike extension schemas, codelists currnently cannot be used to extend existing codelists inside 360Giving. Tools should ignore any entry in this array whose value matches the name of a codelist in 360Giving until this behaviour is desirable.",
 	  "items": {
-	    "type": "string"
+	    "type": "string",
+	    "pattern": "^.*\\.csv$"
 	  },
-	  "uniqueItems": true
+	  "uniqueItems": true,
+	  "minItems": 1
 	}
     }
 }
