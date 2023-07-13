@@ -60,7 +60,7 @@
 	  "items":
 	    {
 	      "type": "string",
-	      "pattern": "^\\d+\\.\\d+$"
+	      "pattern": "^[1-9]+\\.[1-9]\\d*$"
 	    },
 	  "uniqueItems": true,
 	  "minItems": 1
