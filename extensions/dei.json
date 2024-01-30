@@ -13,7 +13,7 @@
   "extensionBaseUrl": "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/",
   "schemas": [
     {
-      "target": "360-giving-schema.json",
+      "target": "360-giving-schema",
       "uri": "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/schema/360-giving-schema.json"
     }
   ],
