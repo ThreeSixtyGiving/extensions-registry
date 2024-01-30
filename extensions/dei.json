@@ -14,13 +14,13 @@
   "schemas": [
     {
       "target": "360-giving-schema.json",
-      "extensionSchema": "360-giving-schema.json"
+      "uri": "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/schema/360-giving-schema.json"
     }
   ],
   "codelists": [
-    "askedStatus.csv",
-    "availableOptions.csv",
-    "replyStatus.csv",
-    "taxonomyCodes.csv"
+    "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/codelists/askedStatus.csv",
+    "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/codelists/availableOptions.csv",
+    "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/codelists/replyStatus.csv",
+    "https://raw.githubusercontent.com/ThreeSixtyGiving/360-dei/main/codelists/taxonomyCodes.csv"
   ]
 }
