@@ -70,13 +70,13 @@ Tools should check for the presence of the `extensions` array in the 360Giving P
   * If `dependsOn` is present, for each string in the array perform this stepwise process from Step 1 recursively until no further dependencies remain. Then proceed to Step 4 for this extension.
   * If `dependsOn` is not present, proceed to Step 4.
 4. For each entry in the `schemas` array perform the following:
-  * Construct the URL to the extension schema file with the following pattern: `extensionBaseUrl` + `/schema/` + `extensionSchema`.
-  * Retrieve the file stored at this URL. Create appropriate error messages in the event of HTTP 40x and 50x error codes.
+  * Take the URI stored in the `extensionSchema` field and retrieve the file at this URI. Create appropriate error messages in the event of HTTP 40x and 50x error codes.
   * Perform a JSON Schema merge patch of the extension schema file onto either the 360Giving Schema or the 360Giving package schema as indicated by the value of `target`.
 5. Check for the presence of the `codelists` array in the registry entry file.
-  * If it is present, for each of the values in this array retrieve the corresponding codelist by constructing the URL using the following pattern: `extensionBaseUrl + /codelists/ + string_in_codelist_array`.
-  * Tools should NOT retrieve or merge any entry in `codelists` which matches [an existing 360Giving codelist file](https://github.com/ThreeSixtyGiving/standard/tree/master/codelists) e.g. `locationScope.csv`. 
-6. Validate the 360Giving data file using the new extended schema.
+  * If it is present, each of the values in the array will be a URI to a CSV file. Retrieve the file stored at this URI and store it in an appropriate place to later compile the schema.
+  * If the codelist would replace or overwrite an existing codelist from the 360Giving Standard, do NOT save the file and report an appropriate error
+6. Once all of the schema patches have been applied and the codelists have been retrieved, generated a compiled schema from the extended schema and codelists.
+7. Validate the 360Giving data file using the new extended schema.
 
 Additional considerations:
 
