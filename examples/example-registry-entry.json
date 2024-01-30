@@ -14,14 +14,14 @@
  "schemas": [
    {
      "target": "360-giving-schema.json",
-     "extensionSchema": "example-extension.json"
+     "uri": "https://raw.githubusercontent.com/example-github-user/example-extension/1__0/schema/example-extension.json"
    },
    {
      "target": "360-giving-package-schema.json",
-     "extensionSchema": "example-metadata-extension.json"
+     "uri": "https://raw.githubusercontent.com/example-github-user/example-extension/1__0/schema/example-metadata-extension.json"
    }
  ],
  "codelists": [
-   "example-codelist.csv"
+   "https://raw.githubusercontent.com/example-github-user/example-extension/1__0/codelists/example-codelist.csv"
  ]
 }

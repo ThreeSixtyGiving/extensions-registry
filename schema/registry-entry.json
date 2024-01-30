@@ -101,7 +101,7 @@
 	  "minItems": 1,
 	  "items": {
 	    "type": "object",
-	    "required": ["target", "extensionSchema"],
+	    "required": ["target", "uri"],
 	    "properties": {
 	      "target": {
 	        "type": "string",
@@ -116,11 +116,11 @@
 		  }
 		]
 	      },
-	      "extensionSchema": {
+	      "uri": {
 		"type": "string",
 		"title": "Extension Schema",
 		"description": "The extension schema file which should be patched onto the target schema. Must match a filename of a file contained inside the schema/ folder underneath the value of extensionBaseUrl.",
-		"pattern": "^.*\\.json$"
+		"format": "uri"
 	      }
 	    }
 	  }
@@ -129,10 +129,10 @@
         {
 	  "type": "array",
 	  "title": "Extension Codelists",
-          "description": "An array containing the names of codelist files added by this extension. Should match a filename located in the codelists/ folder undeneath the value of extensionBaseUrl. Unlike extension schemas, codelists currnently cannot be used to extend existing codelists inside 360Giving. Tools should ignore any entry in this array whose value matches the name of a codelist in 360Giving until this behaviour is desirable.",
+          "description": "An array containing URIs to codelist files added by this extension. Unlike extension schemas, codelists currently cannot be used to extend existing codelists inside 360Giving. Tools should ignore any entry in this array whose filename matches the name of a codelist in 360Giving",
 	  "items": {
 	    "type": "string",
-	    "pattern": "^.*\\.csv$"
+	    "format": "uri"
 	  },
 	  "uniqueItems": true,
 	  "minItems": 1
