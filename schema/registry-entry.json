@@ -109,10 +109,10 @@
 		"description": "The target schema onto which this extension schema will be patched. Must match a file inside the 360Giving Standard Repo schema folder.",
 		"oneOf": [
 		  {
-		    "pattern": "^360-giving-schema\\.json$"
+		    "pattern": "^360-giving-schema$"
 		  },
 		  {
-		    "pattern": "^360-giving-package-schema\\.json$"
+		    "pattern": "^360-giving-package-schema$"
 		  }
 		]
 	      },
