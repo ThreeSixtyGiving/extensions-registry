@@ -1,8 +1,8 @@
 {
   "id": "dei",
-  "title": "Diversity, Equality, and Inclusion Extension",
-  "description": "The Diversity, Equality, and Inclusion (DEI) Extension for 360Giving adds fields and validation to support publishers including DEI data in their 360Giving grants file. The 360Giving team maintain this extension, whereas the DEI Data Group maintain the DEI Standard itself.",
-  "documentationUrl": "https://standard.threesixtygiving.org/en/latest/extensions/dei/#",
+  "title": "Diversity, Equity, and Inclusion Extension",
+  "description": "The Diversity, Equity, and Inclusion (DEI) Extension for 360Giving adds fields and validation to support publishers including DEI data in their 360Giving grants file. The 360Giving team maintain this extension, whereas the DEI Data Group maintain the DEI Standard itself.",
+  "documentationUrl": "https://standard.threesixtygiving.org/en/latest/extensions/dei/",
   "compatibility": [
     "1.4"
   ],
